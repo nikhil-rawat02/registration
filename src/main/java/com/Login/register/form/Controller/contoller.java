@@ -32,10 +32,10 @@ public class contoller {
     }
 
     @PostMapping("/register")
-    public ResponseEntity registerUser(@ModelAttribute User user){
+    public ResponseEntity registerUser(@RequestParam String userName, @RequestParam String userEmail, @RequestParam String userPassword){
         boolean isRegistered;
         try{
-            isRegistered = service.registerUser(user);
+            isRegistered = service.registerUser(userName, userEmail, userPassword);
         }catch (Exception e){
             System.out.println(e.getMessage());
             return new ResponseEntity<>("Some problem occurred in server try again", HttpStatusCode.valueOf(404));

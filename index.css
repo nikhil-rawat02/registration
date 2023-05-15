@@ -175,9 +175,6 @@
     transition: transform .6s ease;
     transition-delay: 0s;
 }
-.logreg-box .form-box.register{
-    
-}
 .logreg-box.active .form-box.register{
     transform: translateX(0);
     transition-delay: 0.7s;
@@ -214,7 +211,10 @@
     pointer-events: none;
     transition: 0.5s ease;
 }
-.input-box input:focus~label,.input-box input:valid~label{
+.input-box input:focus~label{
+    top: -5px;
+}
+.input-box input:valid~label{
     top: -5px;
 }
 .input-box .icon{

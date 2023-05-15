@@ -8,5 +8,5 @@ import com.Login.register.form.Exceptions.UserNotFoundException;
 public interface Service {
     boolean checkLogin(String userName, String password) throws Exception;
 
-    boolean registerUser(User user) throws Exception;
+    boolean registerUser(String userName, String userEmail, String userPassword) throws Exception;
 }

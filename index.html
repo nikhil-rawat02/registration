@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./index.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <title>Document</title>
 </head>
 
@@ -14,10 +15,10 @@
     <header>
         <nav class="navbar">
             <div class="left-container">
-                <a href="#" target="_blank">Home</a>
-                <a href="#" target="_blank">About</a>
-                <a href="#" target="_blank">Service</a>
-                <a href="#" target="_blank">Contact</a>
+                <a href="#" >Home</a>
+                <a href="#" >About</a>
+                <a href="#" >Service</a>
+                <a href="#" >Contact</a>
             </div>
             <div class="right-container">
                 <input type="text" name="search" id="search" placeholder="Search...">
@@ -31,8 +32,8 @@
             <div class="text-sci">
                 <h2 class="name-logo"><i class='bx bx-podcast'></i>Company Name</h2>
                 <h2>Welcome! <br>
-                <span>To Our New WebSite</span>
-            </h2>
+                    <span>To Our New WebSite</span>
+                </h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, facilis?</p>
             </div>
             <div class="social-icons">
@@ -45,58 +46,58 @@
 
         <div class="logreg-box">
             <div class="form-box login">
-                <form action="">
+                <form>
                     <h2>Sign In</h2>
                     <div class="input-box">
                         <span class="icon"><i class='bx bxs-envelope'></i></span>
-                        <input type="email"  id="login-email" required>
+                        <input type="email" id="login-email" required>
                         <label for="email">Email</label>
                     </div>
                     <div class="input-box">
                         <span class="icon"><i class='bx bxs-lock-alt'></i></span>
-                        <input type="password"  id="login-password" required>
+                        <input type="password" id="login-password" required>
                         <label for="password">Password</label>
                     </div>
                     <div class="remember-forgot">
-                        <label for=""><input type="checkbox" >Remember me</label>
+                        <label for=""><input type="checkbox">Remember me</label>
                         <a href="#">Forgot password</a>
                     </div>
-                    <button class= "btn" id ="sign-in">Sign-in</button>
+                    <button class="btn" id="sign-in">Sign-in</button>
                     <div class="login-register">
                         <p>Don't have an account <a href="#" id="register-link">Sign up</a></p>
                     </div>
                 </form>
             </div>
             <div class="form-box register">
-                <form action="/localhost:8080/welcome/register" method="post">
+                <div>
                     <h2>Sign Up</h2>
                     <div class="input-box">
                         <span class="icon"><i class='bx bxs-user'></i></span>
-                        <input type="text" id ="regiter-name"  name="UserName" required>
+                        <input type="text" id="regiter-name" name="UserName" required>
                         <label for="name">Name</label>
                     </div>
                     <div class="input-box">
                         <span class="icon"><i class='bx bxs-envelope'></i></span>
-                        <input type="email"  id="regiter-email" name="emailId" required>
+                        <input type="email" id="regiter-email" name="emailId" required>
                         <label for="email">Email</label>
                     </div>
                     <div class="input-box">
                         <span class="icon"><i class='bx bxs-lock-alt'></i></span>
-                        <input type="password"  id="regiter-password" name="password" required>
+                        <input type="password" id="regiter-password" name="password" required>
                         <label for="password">Password</label>
                     </div>
                     <div class="remember-forgot">
                         <label for=""><input type="checkbox">I agree to the terms & condition</label>
                     </div>
-                    <button type ="submit" class= "btn" id="sign-up">Sign-Up</button>
+                    <button class="btn" id="signUp">Sign-Up</button>
                     <div class="login-register">
                         <p>Already have an account <a href="#" class="login-link">Sign in</a></p>
                     </div>
-                </form>
+                </div>
             </div>
         </div>
     </div>
-<script src="./index.js"></script>
+    <script src="./index.js"></script>
 </body>
 
 </html>

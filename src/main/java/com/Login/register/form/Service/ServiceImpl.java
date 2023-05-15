@@ -5,6 +5,8 @@ import com.Login.register.form.Exceptions.PasswordNotFoundException;
 import com.Login.register.form.Exceptions.UserNotFoundException;
 import com.Login.register.form.repository.Repository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestParam;
+
 @org.springframework.stereotype.Service
 public class ServiceImpl implements Service {
 
@@ -29,12 +31,12 @@ public class ServiceImpl implements Service {
     }
 
     @Override
-    public boolean registerUser(User user) throws Exception {
+    public boolean registerUser(String userName, String userEmail, String userPassword) throws Exception {
         User newUser = new User();
         try{
-            newUser.setUserName(user.getUserName());
-            newUser.setEmailId(user.getEmailId());
-            newUser.setPassword(user.getPassword());
+            newUser.setUserName(userName);
+            newUser.setEmailId(userEmail);
+            newUser.setPassword(userPassword);
             repository.save(newUser);
             return true;
         }catch (Exception e) {
