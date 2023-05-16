@@ -9,28 +9,29 @@ import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-//@CrossOrigin(origins = "http://127.0.0.1:5500")
+@CrossOrigin(origins = "https://nikhil-rawat02.github.io/registration/")
 @RestController
 @RequestMapping("/user")
 public class StudentController {
 
-    @Autowired Service service;
+    @Autowired
+    Service service;
 
     @GetMapping("/check")
-    public ResponseEntity check(){
+    public ResponseEntity check() {
         LoginResposeDto loginResposeDto = new LoginResposeDto();
         System.out.println(loginResposeDto);
-        return new  ResponseEntity<>(loginResposeDto, HttpStatus.ACCEPTED);
+        return new ResponseEntity<>(loginResposeDto, HttpStatus.ACCEPTED);
     }
 
     @GetMapping("/login")
-    public ResponseEntity checkLogin (@RequestParam String userEmail, @RequestParam String userPassword){
-        User user ;
-        try{
-            user = service.checkLogin(userEmail,userPassword);
-        }catch (UserNotFoundException e){
+    public ResponseEntity checkLogin(@RequestParam String userEmail, @RequestParam String userPassword) {
+        User user;
+        try {
+            user = service.checkLogin(userEmail, userPassword);
+        } catch (UserNotFoundException e) {
             return new ResponseEntity<>("User not found Check your email or signIn!", HttpStatus.NOT_FOUND);
-        }catch ( PasswordNotFoundException e){
+        } catch (PasswordNotFoundException e) {
             return new ResponseEntity<>("Invalid Password!", HttpStatus.NOT_FOUND);
         } catch (Exception e) {
             return new ResponseEntity<>("Server Error from database!", HttpStatus.NOT_FOUND);
@@ -40,16 +41,16 @@ public class StudentController {
     }
 
     @PostMapping("/register")
-    public ResponseEntity registerUser(@RequestBody RegisterRequestDto registerRequestDto){
+    public ResponseEntity registerUser(@RequestBody RegisterRequestDto registerRequestDto) {
         User isRegistered;
-        try{
+        try {
             isRegistered = service.registerUser(registerRequestDto);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println(e.getMessage());
             return new ResponseEntity<>("Some problem occurred in server try again", HttpStatusCode.valueOf(404));
         }
         System.out.println(isRegistered);
-        return new ResponseEntity<>(isRegistered,HttpStatus.CREATED);
+        return new ResponseEntity<>(isRegistered, HttpStatus.CREATED);
 
     }
 
