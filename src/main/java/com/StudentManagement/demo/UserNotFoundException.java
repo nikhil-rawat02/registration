@@ -1,4 +1,4 @@
-package com.Login.register.form.Exceptions;
+package com.StudentManagement.demo;
 
 public class UserNotFoundException extends Exception{
     public UserNotFoundException(String message){

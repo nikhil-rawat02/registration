@@ -1,10 +1,10 @@
-package com.Login.register.form;
+package com.StudentManagement.demo;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class RegisterFormApplicationTests {
+class StudentManagementApplicationTests {
 
 	@Test
 	void contextLoads() {

@@ -1,13 +1,13 @@
-package com.Login.register.form;
+package com.StudentManagement.demo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class RegisterFormApplication {
+public class StudentManagementApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(RegisterFormApplication.class, args);
+		SpringApplication.run(StudentManagementApplication.class, args);
 	}
 
 }
