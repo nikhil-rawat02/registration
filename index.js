@@ -18,11 +18,11 @@ loginLink.addEventListener('click', () => {
 
 // Test Rest API
 async function checkApi() {
-    const response = await fetch(`http://13.50.48.24:8080/user/check`);
+    const response = await fetch(`https://13.50.48.24:8080/user/check`);
     const data = await response.json();
     console.log(data);
 }
-
+checkApi();
 //Login user function 
 signIn.addEventListener("click", async (event) => {
     event.preventDefault();
@@ -30,7 +30,7 @@ signIn.addEventListener("click", async (event) => {
     const email = document.getElementById("login-email").value;
     const password = document.getElementById("login-password").value;
 
-    axios.get("http://13.50.48.24:8080/user/login", {
+    axios.get("https://13.50.48.24:8080/user/login", {
         params: {
             userEmail: email,
             userPassword: password
@@ -69,7 +69,7 @@ signUp.addEventListener("click", async (event) => {
     const email = document.getElementById("regiter-email").value;
     const password = document.getElementById("regiter-password").value;
 
-    axios.post("http://13.50.48.24:8080/user/register", {
+    axios.post("https://13.50.48.24:8080/user/register", {
         userName: name,
         userEmail: email,
         userPassword: password
